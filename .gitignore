@@ -1,0 +1,22 @@
+# build artifacts and packaging leftovers
+dist/
+build/
+*.zip
+*.skill
+out/
+
+# editor / OS
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# runtime samples
+*.log
+__pycache__/
+*.pyc
+
+# local secrets
+.env
+*.local.json

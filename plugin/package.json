@@ -1,0 +1,33 @@
+{
+  "name": "dsh-sponge-buddy",
+  "version": "1.0.2",
+  "private": true,
+  "description": "宝宝大星: a tiny pinned, draggable buddy for the DSH Web GUI, BaoBao by day and DaXing by night, showing context pressure and the session task count, tracking tasks, and compacting the context on demand.",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  }
+}

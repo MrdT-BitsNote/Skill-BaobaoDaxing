@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+const p = process.env.USERPROFILE + '/.dsh/storages/session_projcache/sessions/session-d5ca6653-e3f2-4fdc-982c-e862a0f89749.json';
+const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+const rows = j.record.rows;
+const cp = rows.contextPressure.val;
+const tu = rows.tokenUsage.val;
+const pct = Math.round((cp.pressureTokens / cp.contextWindow) * 100);
+console.log('pressure', cp.pressureTokens, '/', cp.contextWindow, '=', pct + '%');
+console.log('surface', cp.surfaceTokens, 'sampled', cp.sampledSurfaceTokens);
+console.log('usage in', tu.totals.uncachedInputTokens, 'out', tu.totals.outputTokens);
