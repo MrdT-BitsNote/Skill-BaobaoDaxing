@@ -23,6 +23,6 @@ DeepSeek Harness Web GUI 的置顶小浮窗（插件 bundle）。
 
 ## 安装 / 卸载 / 升级
 
-- 安装：`plugin_manager` `action: install_bundle`，target 为 `D:\DeepSeek Harness\workbox\plugins\dsh-sponge-buddy`。
+- 安装：`plugin_manager` `action: install_bundle`，target 为本目录的绝对路径（即 `plugin/` 在本机的位置）。
 - 卸载：`plugin_manager` `action: remove_bundle`，target `dsh-sponge-buddy`。
 - 前端改动在打包版 GUI 下需要刷新页面；验证用 `cordis_inspect_query`（client / Slots / `shell.overlay`）看 occupant `sponge-buddy` 是否 active。
